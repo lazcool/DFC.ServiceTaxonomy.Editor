@@ -1,8 +1,11 @@
 using System;
+using DFC.ServiceTaxonomy.Editor.Module.Activities;
+using DFC.ServiceTaxonomy.Editor.Module.Drivers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using OrchardCore.Modules;
+using OrchardCore.Workflows.Helpers;
 
 namespace DFC.ServiceTaxonomy.Editor.Module
 {
@@ -10,6 +13,8 @@ namespace DFC.ServiceTaxonomy.Editor.Module
     {
         public override void ConfigureServices(IServiceCollection services)
         {
+            // no mention of this being necessary in the docs the, king cnut's :-)
+            services.AddActivity<SyncToGraphTask, SyncToGraphTaskDisplay>();
         }
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)

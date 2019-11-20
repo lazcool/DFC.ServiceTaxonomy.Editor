@@ -18,8 +18,9 @@ namespace DFC.ServiceTaxonomy.Editor.Module.Activities
         
         public override string Name => nameof(SyncToGraphTask);
         public override LocalizedString DisplayText => T["Sync content item to Neo4j graph"];
-        public override LocalizedString Category => T["Neo4j"];
-        
+//        public override LocalizedString Category => T["Neo4j"];
+        public override LocalizedString Category => T["Primitives"];
+
         public override IEnumerable<Outcome> GetPossibleOutcomes(WorkflowExecutionContext workflowContext, ActivityContext activityContext)
         {
             return Outcomes(T["Done"]);
